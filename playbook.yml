@@ -1,0 +1,52 @@
+
+---
+- name: Desplegar DB
+  hosts: DB
+  become: true
+    
+  tasks:
+
+    - name: Instalar Nginx
+      apt:
+        name: nginx
+        state: present
+        update_cache: true
+
+    - name: Crear usuario Nginx
+      user:
+        name: nginx
+        state: present
+
+    - name: Dejar fichero de aprovisionamiento
+      copy:
+        content: "{{ ansible_date_time.iso8601 }}"
+        dest: /etc/provisioned
+
+- name: Desplegar ML
+  hosts: ML
+  become: true
+    
+  tasks:
+
+    - name: Instalar Pip, python y venv
+      apt:
+        name: 
+          - python3
+          - python3-pip
+          - python3-venv
+        state: present
+
+    - name: Crear entorno virtual
+      command: python3 -m venv /opt/venv
+      args:
+        creates: /opt/venv
+
+    - name: Instalar Pandas en el entorno virtual
+      pip:
+        name: pandas
+        virtualenv: /opt/venv
+
+    - name: Dejar fichero de aprovisionamiento
+      copy:
+        content: "{{ ansible_date_time.iso8601 }}"
+        dest: /etc/provisioned

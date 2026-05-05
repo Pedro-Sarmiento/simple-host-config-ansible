@@ -1,0 +1,13 @@
+---
+all:
+  children:
+    DB:
+      hosts:
+        localhost:
+          ansible_connection: local
+          ansible_user: "{{ lookup('env', 'USER') }}"
+    ML:
+      hosts:
+        localhost:
+          ansible_connection: local
+          ansible_user: "{{ lookup('env', 'USER') }}"
