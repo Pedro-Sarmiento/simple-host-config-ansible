@@ -11,7 +11,7 @@ host-config-ansible/
 ├── playbook.yml        # Playbook principal
 ├── inventory.yml       # Inventario de hosts
 └── README.md
-~~
+```
 
 ---
 
@@ -42,22 +42,22 @@ host-config-ansible/
 
 ### 1. Clona el repositorio
 
-~~bash
+```bash
 git clone git@github.com:Pedro-Sarmiento/host-config-ansible.git
 cd host-config-ansible
-~~
+```
 
 ### 2. Ejecuta el playbook
 
-~~bash
+```bash
 ansible-playbook -i inventory.yml playbook.yml --ask-become-pass
-~~
+```
 
 ### 3. Verifica el aprovisionamiento
 
-~~bash
+```bash
 cat /etc/provisioned
-~~
+```
 
 ---
 
