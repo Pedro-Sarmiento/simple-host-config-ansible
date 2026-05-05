@@ -6,7 +6,7 @@ Práctica de Ansible que define dos grupos de hosts (DB y ML) y ejecuta tareas e
 
 ## Estructura del proyecto
 
-~~
+```
 host-config-ansible/
 ├── playbook.yml        # Playbook principal
 ├── inventory.yml       # Inventario de hosts
