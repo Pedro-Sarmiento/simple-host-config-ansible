@@ -1,4 +1,4 @@
-# Configuración de hosts con Ansible - Lab03
+# Configuración de hosts con Ansible
 
 Práctica de Ansible que define dos grupos de hosts (DB y ML) y ejecuta tareas específicas en cada uno.
 
